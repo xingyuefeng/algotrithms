@@ -1,8 +1,9 @@
 package com.sort;
 
-public class SelectSort {
+// 选择排序
+public class SelectSort extends SortTemp {
 
-    public int[] sort (int[] args) {
+    public void sort (int[] args) {
         for (int i = 0; i < args.length; i++) {
             int min = i;
             for (int j = i + 1; j < args.length; j++) {
@@ -11,13 +12,16 @@ public class SelectSort {
                 }
             }
             if (min != i) {
-                int tmp = args[i];
-                args[i] = args[min];
-                args[min] = tmp;
+                exchange(args, i, min);
             }
 
         }
-        return args;
+    }
+
+    public  void test(int [] args) {
+        sort(args);
+        assert isSorted(args);
+        show(args);
     }
 
 }
