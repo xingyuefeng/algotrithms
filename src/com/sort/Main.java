@@ -10,7 +10,10 @@ public class Main {
 //        selectSort.test(args);
 
         // 插入排序
-        SelectSort Insertion = new SelectSort();
-        Insertion.test(args);
+//        SelectSort Insertion = new SelectSort();
+//        Insertion.test(args);
+        // 希尔排序
+        Shell shell = new Shell();
+        shell.test(args);
     }
 }
