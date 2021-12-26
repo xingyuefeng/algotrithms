@@ -1,7 +1,7 @@
 package com.sort;
 
 
-public class MergeSort {
+public class MergeSort extends SortTemp {
 
     private static int[] aux;
 
@@ -14,7 +14,7 @@ public class MergeSort {
         if (hi <= lo) return;
         int mid = lo + (hi - lo) /2;
         sort(a, lo, mid);  // 左半变排序
-        sort(a, mid + 1, hi); // 右半边拍讯
+        sort(a, mid + 1, hi); // 右半边排序
         merge(a, lo, mid, hi);
     }
 
@@ -24,7 +24,6 @@ public class MergeSort {
        for (int k = lo; k <= hi; k++) {
            aux[k] = a[k];
        }
-
         for (int k = lo; k <= hi; k++) {
             if      (i > mid)          a[k] = aux[j++];
             else if (j > hi)           a[k] = aux[i++];
@@ -32,5 +31,10 @@ public class MergeSort {
             else                       a[k] = aux[i++];
         }
 
+    }
+
+    public  void test(int [] args) {
+        sort(args);
+        show(args);
     }
 }
