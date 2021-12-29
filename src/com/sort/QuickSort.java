@@ -1,5 +1,6 @@
 package com.sort;
 
+// 快速排序
 public class QuickSort extends SortTemp{
     public static void sort(int[] a, int lo, int hi) {
         if (hi <= lo) return;
